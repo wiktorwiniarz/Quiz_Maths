@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quiz_Matematyczny", "Quiz_Matematyczny\Quiz_Matematyczny.csproj", "{8058C08B-7FE8-413F-A539-9A718182E9B1}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Quiz_MAtematyczny_58998", "Quiz_MAtematyczny_58998\Quiz_MAtematyczny_58998.vdproj", "{9647E522-FAF7-441F-BD5E-DFF44ABADC9D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8058C08B-7FE8-413F-A539-9A718182E9B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8058C08B-7FE8-413F-A539-9A718182E9B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8058C08B-7FE8-413F-A539-9A718182E9B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8058C08B-7FE8-413F-A539-9A718182E9B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9647E522-FAF7-441F-BD5E-DFF44ABADC9D}.Debug|Any CPU.ActiveCfg = Debug
+		{9647E522-FAF7-441F-BD5E-DFF44ABADC9D}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {979D9DE9-DA53-4B02-A9BE-EC8DA6A413D2}
+	EndGlobalSection
+EndGlobal
