@@ -58,6 +58,8 @@ namespace Quiz_Matematyczny
             mnozenie.Show();
         }
 
+
+        //Metoda dodająca w menuStrip przycik dzielenie
         private void dzielenieToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Dzielenie dzielenie = new Dzielenie();
