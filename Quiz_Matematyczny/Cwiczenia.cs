@@ -1,4 +1,15 @@
-﻿using System;
+﻿/**
+ * @file Ćwiczenia.cs
+ * @autor Wiktor Winiarz
+ * @date June 12, 2019
+ * @brief It is the main form of project
+ * 
+ * This Form conatains methods
+ */
+
+
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,26 +28,31 @@ namespace Quiz_Matematyczny
             InitializeComponent();
         }
 
+        /**Zamknięcie ćwiczenia*/
         private void zamknijToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        /**Szereguje w poziomie*/
         private void uszeregujWPoziomieToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LayoutMdi(MdiLayout.TileHorizontal);
         }
 
+        /**Szereguje w pionie*/
         private void uszeregujWPionieToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LayoutMdi(MdiLayout.TileVertical);
         }
 
+        /**Szereguje kaskadowo*/
         private void uszeregujKaskadowoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LayoutMdi(MdiLayout.Cascade);
         }
 
+        /**Ten ivent jest przypisany do przycisku dodaj, Po naciśnieciu uruchamia ćwiczenie dodawanie*/
         private void dodawanieToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Dodawanie dodawanie = new Dodawanie();
@@ -44,6 +60,7 @@ namespace Quiz_Matematyczny
             dodawanie.Show();
         }
 
+        /**Ten ivent jest przypisany do przycisku odejmowanie, Po naciśnieciu uruchamia ćwiczenie odejmowanie*/
         private void odejmowanieToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Odejmowanie odejmowanie = new Odejmowanie();
@@ -51,6 +68,7 @@ namespace Quiz_Matematyczny
             odejmowanie.Show();
         }
 
+        /**Ten ivent jest przypisany do przycisku mnożenie, Po naciśnieciu uruchamia ćwiczenie mnożenie*/
         private void mnożenieToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Mnozenie mnozenie = new Mnozenie();
@@ -59,7 +77,7 @@ namespace Quiz_Matematyczny
         }
 
 
-        //Metoda dodająca w menuStrip przycik dzielenie
+        /**Ten ivent jest przypisany do przycisku dzielenie, Po naciśnieciu uruchamia ćwiczenie dzielenie*/
         private void dzielenieToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Dzielenie dzielenie = new Dzielenie();
