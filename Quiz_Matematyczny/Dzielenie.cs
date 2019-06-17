@@ -77,6 +77,11 @@ namespace Quiz_Matematyczny
         private void StartDzielenie_Click(object sender, EventArgs e)
         {
             StartTheQuiz();
+            pictureBox1.Image = null;
+            pictureBox2.Image = null;
+            pictureBox3.Image = null;
+            pictureBox4.Image = null;
+            pictureBox5.Image = null;
             StartDzielenie.Enabled = false;
         }
 
@@ -99,8 +104,9 @@ namespace Quiz_Matematyczny
             }
         }
 
-
        
+        
+
         private bool CheckTheAnswer()
         {
             if ((dividend / divisor == iloraz.Value)
@@ -147,9 +153,13 @@ namespace Quiz_Matematyczny
             if (dividend / divisor == iloraz.Value)
             {
                 CorrectPlay();
+                pictureBox1.Image = Quiz_Matematyczny.Properties.Resources.dobrze1;
             }
             else
+            {
                 WrongPlay();
+                pictureBox1.Image = Quiz_Matematyczny.Properties.Resources.zle1;
+            }
         }
 
         private void valueChanged1(object sender, EventArgs e)
@@ -157,9 +167,13 @@ namespace Quiz_Matematyczny
             if (dividend1 / divisor1 == iloraz1.Value)
             {
                 CorrectPlay();
+                pictureBox2.Image = Quiz_Matematyczny.Properties.Resources.dobrze1;
             }
             else
+            {
                 WrongPlay();
+                pictureBox2.Image = Quiz_Matematyczny.Properties.Resources.zle1;
+            }
         }
 
         private void valueChanged2(object sender, EventArgs e)
@@ -167,9 +181,13 @@ namespace Quiz_Matematyczny
             if (dividend2 / divisor2 == iloraz2.Value)
             {
                 CorrectPlay();
+                pictureBox3.Image = Quiz_Matematyczny.Properties.Resources.dobrze1;
             }
             else
+            {
                 WrongPlay();
+                pictureBox3.Image = Quiz_Matematyczny.Properties.Resources.zle1;
+            }
         }
 
         private void valueChanged3(object sender, EventArgs e)
@@ -177,18 +195,26 @@ namespace Quiz_Matematyczny
             if (dividend3 / divisor3 == iloraz3.Value)
             {
                 CorrectPlay();
+                pictureBox4.Image = Quiz_Matematyczny.Properties.Resources.dobrze1;
             }
             else
+            {
                 WrongPlay();
+                pictureBox4.Image = Quiz_Matematyczny.Properties.Resources.zle1;
+            }
         }
         private void valueChanged4(object sender, EventArgs e)
         {
             if (dividend4 / divisor4 == iloraz4.Value)
             {
                 CorrectPlay();
+                pictureBox5.Image = Quiz_Matematyczny.Properties.Resources.dobrze1;
             }
             else
+            {
                 WrongPlay();
+                pictureBox5.Image = Quiz_Matematyczny.Properties.Resources.zle1;
+            }
         }
 
 

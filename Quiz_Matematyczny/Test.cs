@@ -16,11 +16,11 @@ namespace Quiz_Matematyczny
     {
         /**  Tworzymy losowy obiekt o nazwie randomizer 
              do generowania liczb losowych.*/
-            
+
         Random randomizer = new Random();
 
         /** Te zmienne całkowite przechowują liczby
-            dla problemu dodawania. */ 
+            dla problemu dodawania. */
         int addend1;
         int addend2;
 
@@ -30,7 +30,7 @@ namespace Quiz_Matematyczny
         int subtrahend;
 
         /** Te zmienne całkowite przechowują liczby
-          * dla problemu mnożenia.*/ 
+          * dla problemu mnożenia.*/
         int multiplicand;
         int multiplier;
 
@@ -46,7 +46,7 @@ namespace Quiz_Matematyczny
         /**
         * Rozpocznij quiz, wypełniając wszystkie problemy
           i uruchomienie zegara.*/
-       
+
         public void StartTheQuiz()
         {
             /** Wypełnij problem dodawania.
@@ -103,6 +103,11 @@ namespace Quiz_Matematyczny
         private void startButton_Click(object sender, EventArgs e)
         {
             StartTheQuiz();
+            pictureBox1.Image = null;
+            pictureBox2.Image = null;
+            pictureBox3.Image = null;
+            pictureBox4.Image = null;
+
             startButton.Enabled = false;
         }
 
@@ -122,7 +127,7 @@ namespace Quiz_Matematyczny
             }
             else if (timeLeft > 0)
             {
-                
+
                 /** Jeśli CheckTheAnswer () zwraca false, kontynuuj liczenie
                   * na dół. Zmniejsz czas pozostały o jedną sekundę i
                   * wyświetl nowy czas po aktualizacji
@@ -139,8 +144,8 @@ namespace Quiz_Matematyczny
                 /** Jeśli zabrakło czasu, zatrzymaj timer, pokaż
                     a MessageBox i wypełnij odpowiedzi.*/
                 timer1.Stop();
-                timeLabel.Text ="Koniec czasu!";
-                MessageBox.Show("Nie skończyłeś na czas.\n"+
+                timeLabel.Text = "Koniec czasu!";
+                MessageBox.Show("Nie skończyłeś na czas.\n" +
                                 "Przepraszam");
                 sum.Value = addend1 + addend2;
                 roznica.Value = minuend - subtrahend;
@@ -191,16 +196,28 @@ namespace Quiz_Matematyczny
             sound.Play();
         }
 
+       
+
+
         /** Metoda sprawdzania poprawnosc wyniku dla zasygnalizowania dźwiękiem*/
         private void valueChanged(object sender, EventArgs e)
         {
             if (addend1 + addend2 == sum.Value)
             {
                 CorrectPlay();
+                
+                pictureBox1.Image = Quiz_Matematyczny.Properties.Resources.dobrze1;
             }
             else
+            {
                 WrongPlay();
+                pictureBox1.Image = Quiz_Matematyczny.Properties.Resources.zle1;
+
+            }
+          
         }
+
+       
 
         /** Metoda sprawdzania poprawnosc wyniku dla zasygnalizowania dźwiękiem*/
         private void valueChanged1(object sender, EventArgs e)
@@ -208,9 +225,13 @@ namespace Quiz_Matematyczny
             if (minuend - subtrahend == roznica.Value)
             {
                 CorrectPlay();
+                pictureBox2.Image = Quiz_Matematyczny.Properties.Resources.dobrze1;
             }
             else
+            {
                 WrongPlay();
+                pictureBox2.Image = Quiz_Matematyczny.Properties.Resources.zle1;
+            }
         }
 
         /** Metoda sprawdzania poprawnosc wyniku dla zasygnalizowania dźwiękiem*/
@@ -219,9 +240,13 @@ namespace Quiz_Matematyczny
             if (multiplicand * multiplier == iloczyn.Value)
             {
                 CorrectPlay();
+                pictureBox3.Image = Quiz_Matematyczny.Properties.Resources.dobrze1;
             }
             else
+            {
                 WrongPlay();
+                pictureBox3.Image = Quiz_Matematyczny.Properties.Resources.zle1;
+            }
         }
 
         /** Metoda sprawdzania poprawnosc wyniku dla zasygnalizowania dźwiękiem*/
@@ -230,9 +255,15 @@ namespace Quiz_Matematyczny
             if (dividend / divisor == iloraz.Value)
             {
                 CorrectPlay();
+                pictureBox4.Image = Quiz_Matematyczny.Properties.Resources.dobrze1;
             }
             else
+            { 
                 WrongPlay();
+            pictureBox4.Image = Quiz_Matematyczny.Properties.Resources.zle1;
+            }
         }
+
+       
     }
 }

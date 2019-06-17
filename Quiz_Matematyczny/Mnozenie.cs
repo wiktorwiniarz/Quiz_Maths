@@ -102,6 +102,11 @@ namespace Quiz_Matematyczny
         private void StartMnozenie_Click(object sender, EventArgs e)
         {
             StartTheQuiz();
+            pictureBox1.Image = null;
+            pictureBox2.Image = null;
+            pictureBox3.Image = null;
+            pictureBox4.Image = null;
+            pictureBox5.Image = null;
             StartMnozenie.Enabled = false;        }
 
         private void answer_Enter(object sender, EventArgs e)
@@ -135,9 +140,15 @@ namespace Quiz_Matematyczny
             if (multiplicand * multiplier == iloczyn.Value)
             {
                 CorrectPlay();
+                pictureBox1.Image = Quiz_Matematyczny.Properties.Resources.dobrze1;
+
+
             }
             else
+            {
                 WrongPlay();
+                pictureBox1.Image = Quiz_Matematyczny.Properties.Resources.zle1;
+            }
         }
 
         private void valueChanged1(object sender, EventArgs e)
@@ -145,9 +156,13 @@ namespace Quiz_Matematyczny
             if (multiplicand1 * multiplier1 == iloczyn1.Value)
             {
                 CorrectPlay();
+                pictureBox2.Image = Quiz_Matematyczny.Properties.Resources.dobrze1;
             }
             else
+            {
                 WrongPlay();
+                pictureBox2.Image = Quiz_Matematyczny.Properties.Resources.zle1;
+            }
         }
 
         private void valueChanged2(object sender, EventArgs e)
@@ -155,9 +170,13 @@ namespace Quiz_Matematyczny
             if (multiplicand2 * multiplier2 == iloczyn2.Value)
             {
                 CorrectPlay();
+                pictureBox3.Image = Quiz_Matematyczny.Properties.Resources.dobrze1;
             }
             else
+            {
                 WrongPlay();
+                pictureBox3.Image = Quiz_Matematyczny.Properties.Resources.zle1;
+            }
         }
 
         private void valueChanged3(object sender, EventArgs e)
@@ -165,18 +184,26 @@ namespace Quiz_Matematyczny
             if (multiplicand3 * multiplier3 == iloczyn3.Value)
             {
                 CorrectPlay();
+                pictureBox4.Image = Quiz_Matematyczny.Properties.Resources.dobrze1;
             }
             else
+            {
                 WrongPlay();
+                pictureBox4.Image = Quiz_Matematyczny.Properties.Resources.zle1;
+            }
         }
         private void valueChanged4(object sender, EventArgs e)
         {
             if (multiplicand4 * multiplier4 == iloczyn4.Value)
             {
                 CorrectPlay();
+                pictureBox5.Image = Quiz_Matematyczny.Properties.Resources.dobrze1;
             }
             else
+            {
                 WrongPlay();
+                pictureBox5.Image = Quiz_Matematyczny.Properties.Resources.zle1;
+            }
         }
 
       

@@ -70,11 +70,31 @@ namespace Quiz_Matematyczny.Properties {
         }
         
         /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dobrze1 {
+            get {
+                object obj = ResourceManager.GetObject("dobrze1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.IO.UnmanagedMemoryStream podobny do zasobu System.IO.MemoryStream.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream zle {
             get {
                 return ResourceManager.GetStream("zle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap zle1 {
+            get {
+                object obj = ResourceManager.GetObject("zle1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

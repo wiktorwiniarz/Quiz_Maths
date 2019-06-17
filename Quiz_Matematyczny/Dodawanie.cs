@@ -146,22 +146,30 @@ namespace Quiz_Matematyczny
 
             private void valueChanged(object sender, EventArgs e)
             {
-                if (addend1 + addend2 == sum.Value)
-                {
-                    CorrectPlay();
-                }
-                else
-                    WrongPlay();
+            if (addend1 + addend2 == sum.Value)
+            {
+                CorrectPlay();
+                pictureBox1.Image = Quiz_Matematyczny.Properties.Resources.dobrze1;
             }
+            else
+            {
+                WrongPlay();
+                pictureBox1.Image = Quiz_Matematyczny.Properties.Resources.zle1;
+            }
+        }
 
         private void valueChanged1(object sender, EventArgs e)
         {
             if (addend3 + addend4 == sum1.Value)
             {
                 CorrectPlay();
+                pictureBox2.Image = Quiz_Matematyczny.Properties.Resources.dobrze1;
             }
             else
+            {
                 WrongPlay();
+                pictureBox2.Image = Quiz_Matematyczny.Properties.Resources.zle1;
+            }
         }
 
         private void valueChanged2(object sender, EventArgs e)
@@ -169,9 +177,13 @@ namespace Quiz_Matematyczny
             if (addend5 + addend6 == sum2.Value)
             {
                 CorrectPlay();
+                pictureBox3.Image = Quiz_Matematyczny.Properties.Resources.dobrze1;
             }
             else
+            {
                 WrongPlay();
+                pictureBox3.Image = Quiz_Matematyczny.Properties.Resources.zle1;
+            }
         }
 
         private void valueChanged3(object sender, EventArgs e)
@@ -179,23 +191,36 @@ namespace Quiz_Matematyczny
             if (addend7 + addend8 == sum3.Value)
             {
                 CorrectPlay();
+                pictureBox4.Image = Quiz_Matematyczny.Properties.Resources.dobrze1;
             }
             else
+            {
                 WrongPlay();
+                pictureBox4.Image = Quiz_Matematyczny.Properties.Resources.zle1;
+            }
         }
         private void valueChanged4(object sender, EventArgs e)
         {
             if (addend9 + addend10 == sum4.Value)
             {
                 CorrectPlay();
+                pictureBox5.Image = Quiz_Matematyczny.Properties.Resources.dobrze1;
             }
             else
+            {
                 WrongPlay();
+                pictureBox5.Image = Quiz_Matematyczny.Properties.Resources.zle1;
+            }
         }
 
         private void StartDodawanie_Click(object sender, EventArgs e)
         {
             StartTheQuiz();
+            pictureBox1.Image = null;
+            pictureBox2.Image = null;
+            pictureBox3.Image = null;
+            pictureBox4.Image = null;
+            pictureBox5.Image = null;
             StartDodawanie.Enabled = false;
         }
     }
