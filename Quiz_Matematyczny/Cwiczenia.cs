@@ -2,9 +2,9 @@
  * @file Ćwiczenia.cs
  * @autor Wiktor Winiarz
  * @date June 12, 2019
- * @brief It is the main form of project
+ * @brief It is the selectio of exercices form of project
  * 
- * This Form conatains methods
+ * This Form contains methods
  */
 
 

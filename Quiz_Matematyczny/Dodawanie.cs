@@ -1,4 +1,16 @@
-﻿using System;
+﻿/**
+ * @file Dodawanie.cs
+ * @autor Wiktor Winiarz
+ * @date June 12, 2019
+ * @brief It is the main form of project
+ * 
+ * This Form conatains methods
+ */
+
+
+
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
