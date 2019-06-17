@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StronaStartowa));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -56,15 +56,6 @@
             this.panel1.Size = new System.Drawing.Size(652, 20);
             this.panel1.TabIndex = 0;
             // 
-            // panel5
-            // 
-            this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
-            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel5.Location = new System.Drawing.Point(159, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(120, 120);
-            this.panel5.TabIndex = 2;
-            // 
             // panel4
             // 
             this.panel4.Location = new System.Drawing.Point(162, 26);
@@ -78,6 +69,15 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(117, 113);
             this.panel3.TabIndex = 2;
+            // 
+            // panel5
+            // 
+            this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
+            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel5.Location = new System.Drawing.Point(159, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(120, 120);
+            this.panel5.TabIndex = 2;
             // 
             // panel2
             // 
@@ -113,7 +113,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(160, 38);
             this.button4.TabIndex = 3;
-            this.button4.Text = "Zasady";
+            this.button4.Text = "Instrukcja";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
