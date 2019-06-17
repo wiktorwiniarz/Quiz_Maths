@@ -191,7 +191,7 @@ namespace Quiz_Matematyczny
             sound.Play();
         }
 
-        /** Metoda spradzania poprawnosc wyniku dla zasygnalizowania dźwiękiem*/
+        /** Metoda sprawdzania poprawnosc wyniku dla zasygnalizowania dźwiękiem*/
         private void valueChanged(object sender, EventArgs e)
         {
             if (addend1 + addend2 == sum.Value)
@@ -202,7 +202,7 @@ namespace Quiz_Matematyczny
                 WrongPlay();
         }
 
-        /** Metoda spradzania poprawnosc wyniku dla zasygnalizowania dźwiękiem*/
+        /** Metoda sprawdzania poprawnosc wyniku dla zasygnalizowania dźwiękiem*/
         private void valueChanged1(object sender, EventArgs e)
         {
             if (minuend - subtrahend == roznica.Value)
@@ -213,7 +213,7 @@ namespace Quiz_Matematyczny
                 WrongPlay();
         }
 
-        /** Metoda spradzania poprawnosc wyniku dla zasygnalizowania dźwiękiem*/
+        /** Metoda sprawdzania poprawnosc wyniku dla zasygnalizowania dźwiękiem*/
         private void valueChanged2(object sender, EventArgs e)
         {
             if (multiplicand * multiplier == iloczyn.Value)
@@ -224,7 +224,7 @@ namespace Quiz_Matematyczny
                 WrongPlay();
         }
 
-        /** Metoda spradzania poprawnosc wyniku dla zasygnalizowania dźwiękiem*/
+        /** Metoda sprawdzania poprawnosc wyniku dla zasygnalizowania dźwiękiem*/
         private void valueChanged3(object sender, EventArgs e)
         {
             if (dividend / divisor == iloraz.Value)

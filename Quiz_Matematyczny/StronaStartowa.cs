@@ -17,11 +17,13 @@ namespace Quiz_Matematyczny
             InitializeComponent();
         }
 
+        /**Przycisk zamknięcia aplikacji*/
         private void button5_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        /**Przycisk Zasady poakzuje zasady*/
         private void button4_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Do wyboru są dwie opcje: ćwiczenia i test sprawdzający.\n" +
@@ -30,7 +32,7 @@ namespace Quiz_Matematyczny
                             "Kiedy odpowiedz będzie prawidłowa usłyszysz odpowiedni dźwięk.\n"+
                             "Proszę uważać test jest na czas.\n");
         }
-
+        
         private void button3_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Autor: Wiktor Winiarz \nNumer albumu: 58998 \nAplikcja do nauki");
@@ -42,12 +44,13 @@ namespace Quiz_Matematyczny
 
         }
 
+        /**Pokazuje test*/
         private void button2_Click(object sender, EventArgs e)
         {
             Test test = new Test();
             test.Show();
         }
-
+        /**Wejscie w ćwiczenia*/
         private void button1_Click(object sender, EventArgs e)
         {
             Cwiczenia cwiczenia = new Cwiczenia();
