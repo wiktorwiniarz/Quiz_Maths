@@ -1,10 +1,10 @@
 ﻿/**
- * @filr Ćwiczenia.cs
+ * @file Cwiczenia.cs
  * @autor Wiktor Winiarz
- * @date Czerwiec 12, 2019
- * @brief It is the selectio of exercices form of project
+ * @date June 12, 2019
+ * @brief Formularz cwiczenia
  * 
- * This Form contains methods
+ * Ten formularz dotyczy metod wyboru cwiczenia
  */
 
 
@@ -28,31 +28,52 @@ namespace Quiz_Matematyczny
             InitializeComponent();
         }
 
-        /**Zamknięcie ćwiczenia*/
+        /// <summary> 
+        /// Zamknięcie ćwiczenia
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void zamknijToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        /**Szereguje w poziomie*/
+        /// <summary> 
+        /// Szereguje w poziomie
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void uszeregujWPoziomieToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LayoutMdi(MdiLayout.TileHorizontal);
         }
 
-        /**Szereguje w pionie*/
+        /// <summary> 
+        /// Szereguje w pionie
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void uszeregujWPionieToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LayoutMdi(MdiLayout.TileVertical);
         }
 
-        /**Szereguje kaskadowo*/
+        /// <summary> 
+        /// Szereguje kaskadowo
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void uszeregujKaskadowoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LayoutMdi(MdiLayout.Cascade);
         }
 
-        /**Ten ivent jest przypisany do przycisku dodaj, Po naciśnieciu uruchamia ćwiczenie dodawanie*/
+        /// <summary> 
+        /// Te zdarzenie przypisane jest do przycisku dodawanie
+        /// Po naciśnieciu uruchamia ćwiczenie dodawanie
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void dodawanieToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Dodawanie dodawanie = new Dodawanie();
@@ -60,7 +81,12 @@ namespace Quiz_Matematyczny
             dodawanie.Show();
         }
 
-        /**Ten ivent jest przypisany do przycisku odejmowanie, Po naciśnieciu uruchamia ćwiczenie odejmowanie*/
+        /// <summary> 
+        /// Te zdarzenie przypisane jest do przycisku odejmowanie
+        /// Po naciśnieciu uruchamia ćwiczenie odejmowanie
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void odejmowanieToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Odejmowanie odejmowanie = new Odejmowanie();
@@ -68,7 +94,12 @@ namespace Quiz_Matematyczny
             odejmowanie.Show();
         }
 
-        /**Ten ivent jest przypisany do przycisku mnożenie, Po naciśnieciu uruchamia ćwiczenie mnożenie*/
+        /// <summary> 
+        /// Te zdarzenie przypisane jest do przycisku mnozenie
+        /// Po naciśnieciu uruchamia ćwiczenie mnozenie
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void mnożenieToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Mnozenie mnozenie = new Mnozenie();
@@ -77,7 +108,12 @@ namespace Quiz_Matematyczny
         }
 
 
-        /**Ten ivent jest przypisany do przycisku dzielenie, Po naciśnieciu uruchamia ćwiczenie dzielenie*/
+        /// <summary> 
+        /// Te zdarzenie przypisane jest do przycisku dzielenie
+        /// Po naciśnieciu uruchamia ćwiczenie dzielenie
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void dzielenieToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Dzielenie dzielenie = new Dzielenie();

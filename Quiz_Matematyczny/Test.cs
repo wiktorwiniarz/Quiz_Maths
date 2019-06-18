@@ -1,4 +1,16 @@
-﻿using System;
+﻿/**
+ * @file Test.cs
+ * @autor Wiktor Winiarz
+ * @date June 12, 2019
+ * @brief Glowny test quizu sprawdzajacy umiejetnosci
+ * 
+ * Ten formularz dotyczy metod strony startowej
+ */
+
+
+
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,39 +26,39 @@ namespace Quiz_Matematyczny
 {
     public partial class Test : Form
     {
-        /**  Tworzymy losowy obiekt o nazwie randomizer 
+        /* Tworzymy losowy obiekt o nazwie randomizer 
              do generowania liczb losowych.*/
-
         Random randomizer = new Random();
 
-        /** Te zmienne całkowite przechowują liczby
-            dla problemu dodawania. */
+        // Te zmienne całkowite przechowują liczby
+        //  dla problemu dodawania. 
         int addend1;
         int addend2;
 
-        /** Te zmienne całkowite przechowują liczby
-            dla problemu odejmowania. */
+        // Te zmienne całkowite przechowują liczby
+        // dla problemu odejmowania. 
         int minuend;
         int subtrahend;
 
-        /** Te zmienne całkowite przechowują liczby
-          * dla problemu mnożenia.*/
+        // Te zmienne całkowite przechowują liczby
+        // dla problemu mnożenia.
         int multiplicand;
         int multiplier;
 
-        /**Te zmienne całkowite przechowują liczby
-          dla problemu dzielenia. */
+        //Te zmienne całkowite przechowują liczby
+        // dla problemu dzielenia. 
         int dividend;
         int divisor;
 
-        /** Ta zmienna całkowita śledzi
-          pozostały czas.*/
+        // Ta zmienna całkowita śledzi
+        // pozostały czas.
         int timeLeft;
 
-        /**
-        * Rozpocznij quiz, wypełniając wszystkie problemy
-          i uruchomienie zegara.*/
 
+        /// <summary> 
+        /// Rozpocznij quiz, wypełniając wszystkie problemy
+        /// i uruchomienie zegara. 
+        /// </summary> 
         public void StartTheQuiz()
         {
             /** Wypełnij problem dodawania.
@@ -100,10 +112,10 @@ namespace Quiz_Matematyczny
             InitializeComponent();
         }
 
-
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary> 
+        /// Wywołaje metodę StartTheQuiz() i włącza
+        /// przycisk START oraz ustawia pictureBox obraz na null. 
+        /// </summary> 
         /// <param name="sender"></param>
         ///  <param name="e"></param>
         private void startButton_Click(object sender, EventArgs e)
@@ -118,14 +130,18 @@ namespace Quiz_Matematyczny
         }
 
 
-
+        /// <summary> 
+        /// Czas quizu
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (CheckTheAnswer())
             {
-                /** Jeśli CheckTheAnswer () zwraca true, to użytkownik
-                  * dostał właściwą odpowiedź. Zatrzymaj stoper
-                   i pokaż MessageBox.*/
+                // Jeśli CheckTheAnswer () zwraca true, to użytkownik
+                // dostał właściwą odpowiedź. Zatrzymaj stoper
+                // i pokaż MessageBox.
                 timer1.Stop();
                 MessageBox.Show("Masz wszystkie poprawne odpowiedzi!",
                                 "Gratulacje!");
@@ -134,10 +150,10 @@ namespace Quiz_Matematyczny
             else if (timeLeft > 0)
             {
 
-                /** Jeśli CheckTheAnswer () zwraca false, kontynuuj liczenie
-                  * na dół. Zmniejsz czas pozostały o jedną sekundę i
-                  * wyświetl nowy czas po aktualizacji
-                    Etykieta Time Left.*/
+                // Jeśli CheckTheAnswer () zwraca false, kontynuuj liczenie
+                // na dół. Zmniejsz czas pozostały o jedną sekundę i
+                // wyświetl nowy czas po aktualizacji
+                // Etykieta Time Left.
                 timeLeft--;
                 timeLabel.Text = timeLeft + " sekund";
                 if (timeLeft <= 5)
@@ -147,8 +163,8 @@ namespace Quiz_Matematyczny
             }
             else
             {
-                /** Jeśli zabrakło czasu, zatrzymaj timer, pokaż
-                    a MessageBox i wypełnij odpowiedzi.*/
+                // Jeśli zabrakło czasu, zatrzymaj timer, pokaż
+                // a MessageBox i wypełnij odpowiedzi.
                 timer1.Stop();
                 timeLabel.Text = "Koniec czasu!";
                 MessageBox.Show("Nie skończyłeś na czas.\n" +
@@ -161,8 +177,11 @@ namespace Quiz_Matematyczny
             }
         }
 
-        /** Sprawdź odpowiedź, aby sprawdzić, czy użytkownik ma wszystko dobrze.
-            Prawda, jeśli odpowiedź jest poprawna, w przeciwnym razie fałsz.*/
+       
+        /// <summary> 
+        ///  Sprawdź odpowiedź, aby sprawdzić, czy użytkownik ma wszystko dobrze. 
+        /// </summary> 
+        /// <returns>Prawda, jeśli odpowiedź jest poprawna, w przeciwnym razie fałsz.</returns> 
         public bool CheckTheAnswer()
         {
             if ((addend1 + addend2 == sum.Value)
@@ -173,9 +192,19 @@ namespace Quiz_Matematyczny
             else
                 return false;
         }
+
+
+
+
+        /// <summary> 
+        /// Zmodyfikuj zachowanie kontrolki NumericUpDown,
+        /// aby ułatwić wprowadzanie wartości liczbowych w quizie
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void answer_Enter(object sender, EventArgs e)
         {
-            /** Wybierz całą odpowiedź w kontrolce NumericUpDown.*/
+            // Wybierz całą odpowiedź w kontrolce NumericUpDown.
             NumericUpDown answerBox = sender as NumericUpDown;
 
             if (answerBox != null)
@@ -202,10 +231,12 @@ namespace Quiz_Matematyczny
             sound.Play();
         }
 
-       
-
-
-        /** Metoda sprawdzania poprawnosc wyniku dla zasygnalizowania dźwiękiem*/
+        /// <summary> 
+        /// Metoda sprawdzania poprawnosc wyniku dodawania
+        /// dla zasygnalizowania dźwiękiem i obrazkiem
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void valueChanged(object sender, EventArgs e)
         {
             if (addend1 + addend2 == sum.Value)
@@ -223,9 +254,12 @@ namespace Quiz_Matematyczny
           
         }
 
-       
-
-        /** Metoda sprawdzania poprawnosc wyniku dla zasygnalizowania dźwiękiem*/
+        /// <summary> 
+        /// Metoda sprawdzania poprawnosc wyniku odejmowania 
+        /// dla zasygnalizowania dźwiękiem i obrazkiem
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void valueChanged1(object sender, EventArgs e)
         {
             if (minuend - subtrahend == roznica.Value)
@@ -240,7 +274,12 @@ namespace Quiz_Matematyczny
             }
         }
 
-        /** Metoda sprawdzania poprawnosc wyniku dla zasygnalizowania dźwiękiem*/
+        /// <summary> 
+        /// Metoda sprawdzania poprawnosc wyniku mnożenia 
+        /// dla zasygnalizowania dźwiękiem i obrazkiem
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void valueChanged2(object sender, EventArgs e)
         {
             if (multiplicand * multiplier == iloczyn.Value)
@@ -255,7 +294,12 @@ namespace Quiz_Matematyczny
             }
         }
 
-        /** Metoda sprawdzania poprawnosc wyniku dla zasygnalizowania dźwiękiem*/
+        /// <summary> 
+        /// Metoda sprawdzania poprawnosc wyniku dzielenia
+        /// dla zasygnalizowania dźwiękiem i obrazkiem
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void valueChanged3(object sender, EventArgs e)
         {
             if (dividend / divisor == iloraz.Value)

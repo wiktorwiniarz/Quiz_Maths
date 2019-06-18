@@ -2,9 +2,9 @@
  * @file Dodawanie.cs
  * @autor Wiktor Winiarz
  * @date June 12, 2019
- * @brief It is the main form of project
+ * @brief To jest klasa Dodawanie
  * 
- * This Form conatains methods
+ * Zawiera metody dodawania
  */
 
 
@@ -31,17 +31,21 @@ namespace Quiz_Matematyczny
             InitializeComponent();
         }
 
-  
-     
-     Random randomizer = new Random();
+
+             /* Tworzymy losowy obiekt o nazwie randomizer 
+                do generowania liczb losowych.*/
+        Random randomizer = new Random();
 
      
      int addend1, addend2, addend3, addend4, addend5, addend6, addend7, addend8, addend9, addend10;
 
      int timeLabel;
-   
 
-        
+
+        /// <summary> 
+        /// Rozpocznij quiz, wypełniając wszystkie problemy
+        /// i uruchomienie zegara. 
+        /// </summary>
         public void StartTheQuiz()
             {
                
@@ -80,10 +84,13 @@ namespace Quiz_Matematyczny
             time.Text = "0 sekund";
             timer1.Start();
         }
-  
-          
-            
-            private bool CheckTheAnswer()
+
+
+        /// <summary> 
+        ///  Sprawdź odpowiedź, aby sprawdzić, czy użytkownik ma wszystko dobrze. 
+        /// </summary> 
+        /// <returns>Prawda, jeśli odpowiedź jest poprawna, w przeciwnym razie fałsz.</returns> 
+        private bool CheckTheAnswer()
             {
                 if ((addend1 + addend2 == sum.Value)
                       && (addend3 + addend4 == sum1.Value)
@@ -96,6 +103,11 @@ namespace Quiz_Matematyczny
                     return false;
             }
 
+        /// <summary> 
+        /// Czas quizu
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void timer1_Tick(object sender, EventArgs e)
         {
 
@@ -118,6 +130,13 @@ namespace Quiz_Matematyczny
       
         }
 
+
+        /// <summary> 
+        /// Zmodyfikuj zachowanie kontrolki NumericUpDown,
+        /// aby ułatwić wprowadzanie wartości liczbowych w quizie
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void answer_Enter(object sender, EventArgs e)
             {
                 
@@ -130,21 +149,29 @@ namespace Quiz_Matematyczny
                 }
             }
 
-            private void CorrectPlay()
+        /**Metoda dźwięku podczas poprawnej odpowiedzi*/
+        private void CorrectPlay()
             {
                 Stream soundfile = Properties.Resources.dobrze;
                 SoundPlayer sound = new SoundPlayer(soundfile);
                 sound.Play();
             }
 
-            private void WrongPlay()
+        /**Metoda dźwięku podczas złej odpowiedzi*/
+        private void WrongPlay()
             {
                 Stream soundfile = Properties.Resources.zle;
                 SoundPlayer sound = new SoundPlayer(soundfile);
                 sound.Play();
             }
 
-            private void valueChanged(object sender, EventArgs e)
+        /// <summary> 
+        /// Metoda sprawdzania poprawnosc wyniku 1 dodawania
+        /// dla zasygnalizowania dźwiękiem i obrazkiem
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
+        private void valueChanged(object sender, EventArgs e)
             {
             if (addend1 + addend2 == sum.Value)
             {
@@ -158,6 +185,12 @@ namespace Quiz_Matematyczny
             }
         }
 
+        /// <summary> 
+        /// Metoda sprawdzania poprawnosc wyniku 2 dodawania
+        /// dla zasygnalizowania dźwiękiem i obrazkiem
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void valueChanged1(object sender, EventArgs e)
         {
             if (addend3 + addend4 == sum1.Value)
@@ -172,6 +205,12 @@ namespace Quiz_Matematyczny
             }
         }
 
+        /// <summary> 
+        /// Metoda sprawdzania poprawnosc wyniku 3 dodawania
+        /// dla zasygnalizowania dźwiękiem i obrazkiem
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void valueChanged2(object sender, EventArgs e)
         {
             if (addend5 + addend6 == sum2.Value)
@@ -186,6 +225,12 @@ namespace Quiz_Matematyczny
             }
         }
 
+        /// <summary> 
+        /// Metoda sprawdzania poprawnosc wyniku 4 dodawania
+        /// dla zasygnalizowania dźwiękiem i obrazkiem
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void valueChanged3(object sender, EventArgs e)
         {
             if (addend7 + addend8 == sum3.Value)
@@ -199,6 +244,13 @@ namespace Quiz_Matematyczny
                 pictureBox4.Image = Quiz_Matematyczny.Properties.Resources.zle1;
             }
         }
+
+        /// <summary> 
+        /// Metoda sprawdzania poprawnosc wyniku 5 dodawania
+        /// dla zasygnalizowania dźwiękiem i obrazkiem
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void valueChanged4(object sender, EventArgs e)
         {
             if (addend9 + addend10 == sum4.Value)
@@ -213,6 +265,12 @@ namespace Quiz_Matematyczny
             }
         }
 
+        /// <summary> 
+        /// Wywołaje metodę StartTheQuiz() i włącza
+        /// przycisk START oraz ustawia pictureBox obraz na null. 
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void StartDodawanie_Click(object sender, EventArgs e)
         {
             StartTheQuiz();

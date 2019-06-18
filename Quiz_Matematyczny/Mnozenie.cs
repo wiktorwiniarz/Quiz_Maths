@@ -1,4 +1,13 @@
-﻿using System;
+﻿/**
+ * @file Mnozenie.cs
+ * @autor Wiktor Winiarz
+ * @date June 12, 2019
+ * @brief To jest klasa Mnozenie
+ * 
+ * Zawiera metody mnozenia
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,14 +29,21 @@ namespace Quiz_Matematyczny
         }
 
 
-        
+         /* Tworzymy losowy obiekt o nazwie randomizer 
+            do generowania liczb losowych.*/
         Random randomizer = new Random();
  
-        
+        //zmienne
         int multiplicand, multiplier, multiplicand1, multiplier1, multiplicand2, multiplier2, multiplicand3, multiplier3, multiplicand4, multiplier4;
-
-        int timeLabel;
         
+        //zmienna dla czasu
+        int timeLabel;
+
+
+        /// <summary> 
+        /// Rozpocznij quiz, wypełniając wszystkie problemy
+        /// i uruchomienie zegara. 
+        /// </summary>
         public void StartTheQuiz()
         {
             multiplicand = randomizer.Next(2, 11);
@@ -65,8 +81,10 @@ namespace Quiz_Matematyczny
             timer1.Start();
         }
 
-
-       
+        /// <summary> 
+        ///  Sprawdź odpowiedź, aby sprawdzić, czy użytkownik ma wszystko dobrze. 
+        /// </summary> 
+        /// <returns>Prawda, jeśli odpowiedź jest poprawna, w przeciwnym razie fałsz.</returns>
         private bool CheckTheAnswer()
         {
             if ((multiplicand * multiplier == iloczyn.Value)
@@ -80,6 +98,11 @@ namespace Quiz_Matematyczny
                 return false;
         }
 
+        /// <summary> 
+        /// Czas quizu
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (CheckTheAnswer())
@@ -99,6 +122,12 @@ namespace Quiz_Matematyczny
             }
         }
 
+        /// <summary> 
+        /// Wywołaje metodę StartTheQuiz() i włącza
+        /// przycisk START oraz ustawia pictureBox obraz na null. 
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void StartMnozenie_Click(object sender, EventArgs e)
         {
             StartTheQuiz();
@@ -107,8 +136,15 @@ namespace Quiz_Matematyczny
             pictureBox3.Image = null;
             pictureBox4.Image = null;
             pictureBox5.Image = null;
-            StartMnozenie.Enabled = false;        }
+            StartMnozenie.Enabled = false;
+        }
 
+        /// <summary> 
+        /// Zmodyfikuj zachowanie kontrolki NumericUpDown,
+        /// aby ułatwić wprowadzanie wartości liczbowych w quizie
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void answer_Enter(object sender, EventArgs e)
         {
            
@@ -121,6 +157,7 @@ namespace Quiz_Matematyczny
             }
         }
 
+        /**Metoda dźwięku podczas poprawnej odpowiedzi*/
         private void CorrectPlay()
         {
             Stream soundfile = Properties.Resources.dobrze;
@@ -128,6 +165,7 @@ namespace Quiz_Matematyczny
             sound.Play();
         }
 
+        /**Metoda dźwięku podczas złej odpowiedzi*/
         private void WrongPlay()
         {
             Stream soundfile = Properties.Resources.zle;
@@ -135,6 +173,12 @@ namespace Quiz_Matematyczny
             sound.Play();
         }
 
+        /// <summary> 
+        /// Metoda sprawdzania poprawnosc wyniku 1 mnożenia 
+        /// dla zasygnalizowania dźwiękiem i obrazkiem
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void valueChanged(object sender, EventArgs e)
         {
             if (multiplicand * multiplier == iloczyn.Value)
@@ -151,6 +195,12 @@ namespace Quiz_Matematyczny
             }
         }
 
+        /// <summary> 
+        /// Metoda sprawdzania poprawnosc wyniku 2 mnożenia 
+        /// dla zasygnalizowania dźwiękiem i obrazkiem
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void valueChanged1(object sender, EventArgs e)
         {
             if (multiplicand1 * multiplier1 == iloczyn1.Value)
@@ -165,6 +215,12 @@ namespace Quiz_Matematyczny
             }
         }
 
+        /// <summary> 
+        /// Metoda sprawdzania poprawnosc wyniku 3 mnożenia 
+        /// dla zasygnalizowania dźwiękiem i obrazkiem
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void valueChanged2(object sender, EventArgs e)
         {
             if (multiplicand2 * multiplier2 == iloczyn2.Value)
@@ -179,6 +235,12 @@ namespace Quiz_Matematyczny
             }
         }
 
+        /// <summary> 
+        /// Metoda sprawdzania poprawnosc wyniku 4 mnożenia 
+        /// dla zasygnalizowania dźwiękiem i obrazkiem
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void valueChanged3(object sender, EventArgs e)
         {
             if (multiplicand3 * multiplier3 == iloczyn3.Value)
@@ -188,10 +250,18 @@ namespace Quiz_Matematyczny
             }
             else
             {
+
                 WrongPlay();
                 pictureBox4.Image = Quiz_Matematyczny.Properties.Resources.zle1;
             }
         }
+
+        /// <summary> 
+        /// Metoda sprawdzania poprawnosc wyniku 5 mnożenia 
+        /// dla zasygnalizowania dźwiękiem i obrazkiem
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void valueChanged4(object sender, EventArgs e)
         {
             if (multiplicand4 * multiplier4 == iloczyn4.Value)

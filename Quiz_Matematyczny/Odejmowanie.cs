@@ -1,4 +1,13 @@
-﻿using System;
+﻿/**
+ * @file Odejmowanie.cs
+ * @autor Wiktor Winiarz
+ * @date June 12, 2019
+ * @brief To jest klasa Odejmowanie
+ * 
+ * Zawiera metody odejmowania
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,16 +29,22 @@ namespace Quiz_Matematyczny
         }
 
 
-        
+
+        /* Tworzymy losowy obiekt o nazwie randomizer 
+           do generowania liczb losowych.*/
         Random randomizer = new Random();
 
-         
+         //zmienne int
         int minuend, subtrahend, minuend1, subtrahend1, minuend2, subtrahend2, minuend3, subtrahend3, minuend4, subtrahend4;
 
 
 
         int timeLabel;
-       
+
+        /// <summary> 
+        /// Rozpocznij quiz, wypełniając wszystkie problemy
+        /// i uruchomienie zegara. 
+        /// </summary>
         public void StartTheQuiz()
         {
           
@@ -69,6 +84,12 @@ namespace Quiz_Matematyczny
             timer1.Start();
         }
 
+        /// <summary> 
+        /// Wywołaje metodę StartTheQuiz() i włącza
+        /// przycisk START oraz ustawia pictureBox obraz na null. 
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void StartOdejmowanie_Click(object sender, EventArgs e)
         {
             StartTheQuiz();
@@ -80,6 +101,11 @@ namespace Quiz_Matematyczny
             StartOdejmowanie.Enabled = false;
         }
 
+        /// <summary> 
+        /// Czas quizu
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (CheckTheAnswer())
@@ -99,8 +125,10 @@ namespace Quiz_Matematyczny
             }
         }
 
-
-       
+        /// <summary> 
+        ///  Sprawdź odpowiedź, aby sprawdzić, czy użytkownik ma wszystko dobrze. 
+        /// </summary> 
+        /// <returns>Prawda, jeśli odpowiedź jest poprawna, w przeciwnym razie fałsz.</returns> 
         private bool CheckTheAnswer()
         {
             if ((minuend - subtrahend == roznica.Value)
@@ -113,6 +141,13 @@ namespace Quiz_Matematyczny
             else
                 return false;
         }
+
+        /// <summary> 
+        /// Zmodyfikuj zachowanie kontrolki NumericUpDown,
+        /// aby ułatwić wprowadzanie wartości liczbowych w quizie
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void answer_Enter(object sender, EventArgs e)
         {
            
@@ -125,6 +160,7 @@ namespace Quiz_Matematyczny
             }
         }
 
+        /**Metoda dźwięku podczas poprawnej odpowiedzi*/
         private void CorrectPlay()
         {
             Stream soundfile = Properties.Resources.dobrze;
@@ -132,6 +168,7 @@ namespace Quiz_Matematyczny
             sound.Play();
         }
 
+        /**Metoda dźwięku podczas złej odpowiedzi*/
         private void WrongPlay()
         {
             Stream soundfile = Properties.Resources.zle;
@@ -139,6 +176,12 @@ namespace Quiz_Matematyczny
             sound.Play();
         }
 
+        /// <summary> 
+        /// Metoda sprawdzania poprawnosc wyniku 1 odejmowania 
+        /// dla zasygnalizowania dźwiękiem i obrazkiem
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void valueChanged(object sender, EventArgs e)
         {
             if (minuend - subtrahend == roznica.Value)
@@ -153,6 +196,12 @@ namespace Quiz_Matematyczny
             }
         }
 
+        /// <summary> 
+        /// Metoda sprawdzania poprawnosc wyniku 2 odejmowania 
+        /// dla zasygnalizowania dźwiękiem i obrazkiem
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void valueChanged1(object sender, EventArgs e)
         {
             if (minuend1 - subtrahend1 == roznica1.Value)
@@ -167,6 +216,12 @@ namespace Quiz_Matematyczny
             }
         }
 
+        /// <summary> 
+        /// Metoda sprawdzania poprawnosc wyniku 3 odejmowania 
+        /// dla zasygnalizowania dźwiękiem i obrazkiem
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void valueChanged2(object sender, EventArgs e)
         {
             if (minuend2 - subtrahend2 == roznica2.Value)
@@ -181,6 +236,12 @@ namespace Quiz_Matematyczny
             }
         }
 
+        /// <summary> 
+        /// Metoda sprawdzania poprawnosc wyniku 4 odejmowania 
+        /// dla zasygnalizowania dźwiękiem i obrazkiem
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void valueChanged3(object sender, EventArgs e)
         {
             if (minuend3 - subtrahend3 == roznica3.Value)
@@ -194,6 +255,13 @@ namespace Quiz_Matematyczny
                 pictureBox4.Image = Quiz_Matematyczny.Properties.Resources.zle1;
             }
         }
+
+        /// <summary> 
+        /// Metoda sprawdzania poprawnosc wyniku 5 odejmowania 
+        /// dla zasygnalizowania dźwiękiem i obrazkiem
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void valueChanged4(object sender, EventArgs e)
         {
             if (minuend4 - subtrahend4 == roznica4.Value)

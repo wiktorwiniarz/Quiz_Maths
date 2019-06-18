@@ -2,9 +2,9 @@
  * @file StronaStartowa.cs
  * @autor Wiktor Winiarz
  * @date June 12, 2019
- * @brief It is the main form of project
+ * @brief Jest ot glowny main projektu
  * 
- * This Form conatains methods
+ * Ten formularz dotyczy metod strony startowej
  */
 
 
@@ -29,13 +29,21 @@ namespace Quiz_Matematyczny
             InitializeComponent();
         }
 
-        /**Przycisk zamknięcia aplikacji*/
+        /// <summary> 
+        /// Przycisk zamknięcia aplikacji
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void button5_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        /**Przycisk Zasady poakzuje zasady*/
+        /// <summary> 
+        /// Przycisk Zasady ma opis jak nalezy postepowac podczas uruchomienia aplikacji
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void button4_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Do wyboru są dwie opcje: ćwiczenia i test sprawdzający.\n" +
@@ -44,7 +52,12 @@ namespace Quiz_Matematyczny
                             "Kiedy odpowiedz będzie prawidłowa usłyszysz odpowiedni dźwięk.\n"+
                             "Proszę uważać test jest na czas.\n");
         }
-        
+
+        /// <summary> 
+        /// Przycisk Autor ukazuje nam autora aplkacji
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Autor: Wiktor Winiarz \nNumer albumu: 58998 \nAplikcja do nauki");
@@ -56,13 +69,22 @@ namespace Quiz_Matematyczny
 
         }
 
-        /**Pokazuje test*/
+        /// <summary> 
+        /// Uruchamia test quizu
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             Test test = new Test();
             test.Show();
         }
-        /**Wejscie w ćwiczenia*/
+        
+        /// <summary> 
+        /// Uruchamia cwiczenia quizu
+        /// </summary> 
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             Cwiczenia cwiczenia = new Cwiczenia();
