@@ -46,10 +46,10 @@ namespace Quiz_Matematyczny
         ///  <param name="e"></param>
         private void button4_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Do wyboru są dwie opcje: ćwiczenia i test sprawdzający.\n" +
-                            "Który pomaga nam w ćwiczeniu refleksu w obliczaniu.\n" +
+            MessageBox.Show("Do wyboru są dwie opcje: ćwiczenia, dzięki którym możemy podszkolić swoje umiejętnosci obliczania\n" +
+                            "oraz test sprawdzający, który pomaga nam w ćwiczeniu refleksu w obliczaniu.\n" +
                             "W Teście proszę nacisnąć przycisk 'start' i uzupełnić pola liczbami.\n" +
-                            "Kiedy odpowiedz będzie prawidłowa usłyszysz odpowiedni dźwięk.\n"+
+                            "Kiedy odpowiedz będzie prawidłowa usłyszysz odpowiedni dźwięk i wyświetli się poprawność wyniku.\n"+
                             "Proszę uważać test jest na czas.\n");
         }
 

@@ -168,7 +168,7 @@ namespace Quiz_Matematyczny
                 timer1.Stop();
                 timeLabel.Text = "Koniec czasu!";
                 MessageBox.Show("Nie skończyłeś na czas.\n" +
-                                "Przepraszam");
+                                "Spróbuj jeszcze raz!");
                 sum.Value = addend1 + addend2;
                 roznica.Value = minuend - subtrahend;
                 iloczyn.Value = multiplicand * multiplier;
