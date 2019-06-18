@@ -1,7 +1,7 @@
 ﻿/**
- * @file Ćwiczenia.cs
+ * @filr Ćwiczenia.cs
  * @autor Wiktor Winiarz
- * @date June 12, 2019
+ * @date Czerwiec 12, 2019
  * @brief It is the selectio of exercices form of project
  * 
  * This Form contains methods

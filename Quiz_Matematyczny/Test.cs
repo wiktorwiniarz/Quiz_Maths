@@ -100,6 +100,12 @@ namespace Quiz_Matematyczny
             InitializeComponent();
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        ///  <param name="e"></param>
         private void startButton_Click(object sender, EventArgs e)
         {
             StartTheQuiz();
@@ -157,7 +163,7 @@ namespace Quiz_Matematyczny
 
         /** Sprawdź odpowiedź, aby sprawdzić, czy użytkownik ma wszystko dobrze.
             Prawda, jeśli odpowiedź jest poprawna, w przeciwnym razie fałsz.*/
-        private bool CheckTheAnswer()
+        public bool CheckTheAnswer()
         {
             if ((addend1 + addend2 == sum.Value)
                   && (minuend - subtrahend == roznica.Value)
