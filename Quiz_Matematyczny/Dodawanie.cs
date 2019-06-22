@@ -48,7 +48,7 @@ namespace Quiz_Matematyczny
         /// </summary>
         public void StartTheQuiz()
             {
-               
+               //Zmienne
                 addend1 = randomizer.Next(51);
                 addend2 = randomizer.Next(51);
                 addend3 = randomizer.Next(51);
